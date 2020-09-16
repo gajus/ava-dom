@@ -19,11 +19,11 @@ Configure ava to `require` `ava-dom/shim` before every test file.
 
 ```
 {
-	"ava": {
-		"require": [
-			"ava-dom/shim"
-		]
-	}
+  "ava": {
+    "require": [
+      "ava-dom/shim"
+    ]
+  }
 }
 
 ```
