@@ -1,0 +1,91 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "ava": {
+    "babel": {
+      "compileAsTests": [
+        "test/helpers/**/*"
+      ]
+    },
+    "files": [
+      "test/ava-dom/**/*"
+    ],
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "jest-matcher-utils": "^26.4.2",
+    "jest-util": "^26.3.0"
+  },
+  "description": "Port of jest-dom to ava.",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-flow-strip-types": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "ava": "^3.12.1",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-transform-export-default-name": "^2.0.4",
+    "browser-env": "^3.3.0",
+    "coveralls": "^3.1.0",
+    "domain-parent": "^1.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-canonical": "^24.1.1",
+    "flow-bin": "^0.133.0",
+    "flow-copy-source": "^2.0.9",
+    "husky": "^4.3.0",
+    "nyc": "^15.1.0",
+    "semantic-release": "^17.1.1",
+    "sinon": "^9.0.3"
+  },
+  "engines": {
+    "node": ">=10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test && npm run build"
+    }
+  },
+  "keywords": [
+    "jest",
+    "ava",
+    "dom"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/index.js",
+  "name": "ava-dom",
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "instrument": false,
+    "reporter": [
+      "text-lcov"
+    ],
+    "require": [
+      "@babel/register"
+    ],
+    "sourceMap": false
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gajus/ava-dom.git"
+  },
+  "scripts": {
+    "build": "rm -fr ./dist && NODE_ENV=production babel ./src --out-dir ./dist --copy-files --source-maps && flow-copy-source src dist",
+    "dev": "NODE_ENV=production babel ./src --out-dir ./dist --copy-files --source-maps --watch",
+    "lint": "eslint ./src ./test && flow",
+    "test": "NODE_ENV=test ava --serial --verbose"
+  },
+  "version": "1.0.0"
+}
