@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "jest-matcher-utils": "^26.4.2",
-    "jest-util": "^26.3.0"
+    "jest-matcher-utils": "^26.4.2"
   },
   "description": "Port of jest-dom to ava.",
   "devDependencies": {
