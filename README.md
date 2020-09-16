@@ -17,7 +17,7 @@ npm install --save-dev ava-dom
 
 Configure ava to `require` `ava-dom/shim` before every test file.
 
-```
+```json
 {
   "ava": {
     "require": [
@@ -28,7 +28,7 @@ Configure ava to `require` `ava-dom/shim` before every test file.
 
 ```
 
-Alternatively, just load call `shim` function in ava test.
+Alternatively, just import and call `shim` function in ava test.
 
 ```js
 import ava from 'ava';
